@@ -17,64 +17,143 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      background-color: #0d0d0d;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: #e8f5e9;
       font-family: 'Muli', sans-serif;
       padding-left: 260px;
+      overflow-x: hidden;
     }
+    @media (max-width: 768px) {
+      body {
+        padding-left: 0;
+      }
+      #sideNav {
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-around !important;
+        padding: 10px 0;
+      }
+      .img-profile {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
     .bg-primary {
       background-color: #1b1f23 !important;
+      box-shadow: 0 4px 20px rgba(0, 255, 128, 0.2);
     }
+
     .text-primary {
       color: #69f0ae !important;
     }
+
     a, a:hover {
       color: #00e676;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
     }
+
     .resume-section {
       padding: 4rem 2rem;
+      animation: fadeInUp 1s ease forwards;
     }
+
     .resume-section-content h2 {
       color: #00e676;
+      position: relative;
+      display: inline-block;
     }
+
+    .resume-section-content h2::after {
+      content: '';
+      width: 100%;
+      height: 3px;
+      background: #00e676;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      border-radius: 50px;
+    }
+
     .resume-section-content ul li {
       margin-bottom: 1rem;
       line-height: 1.6;
     }
+
     .social-icons a {
-      font-size: 1.5rem;
-      margin-right: 15px;
+      font-size: 1.8rem;
+      margin-right: 20px;
       color: #81c784;
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, color 0.3s;
     }
+
     .social-icons a:hover {
       color: #b9f6ca;
-      transform: scale(1.2);
+      transform: scale(1.3) rotate(3deg);
     }
+
     .navbar-nav .nav-link {
       color: #c8e6c9 !important;
+      padding: 0.75rem 1.2rem;
+      font-size: 1.1rem;
     }
+
     .navbar-nav .nav-link:hover {
       color: #00e676 !important;
+      background-color: rgba(105, 240, 174, 0.1);
+      border-radius: 10px;
     }
+
     .img-profile {
       max-width: 200px;
-      border: 4px solid #4caf50;
+      border: 5px solid #4caf50;
+      box-shadow: 0 0 20px rgba(0, 255, 128, 0.5);
     }
+
     .fade-in {
       animation: fadeInUp 0.8s ease forwards;
       opacity: 0;
       transform: translateY(20px);
     }
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 4rem;
+      padding-top: 1rem;
+    }
   </style>
 </head>
 <body id="page-top">
+  <div id="particles-js" style="position:fixed; z-index:-1; width:100%; height:100%; top:0; left:0;"></div>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {"value": 50},
+        "color": {"value": "#00e676"},
+        "shape": {"type": "circle"},
+        "opacity": {"value": 0.5},
+        "size": {"value": 3},
+        "line_linked": {"enable": true, "distance": 150, "color": "#00e676", "opacity": 0.4, "width": 1},
+        "move": {"enable": true, "speed": 2}
+      },
+      "interactivity": {"events": {"onhover": {"enable": true, "mode": "repulse"}}},
+      "retina_detect": true
+    });
+  </script>
+
+  <!-- Navigation Bar (Sidebar) -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top flex-column" id="sideNav" style="width: 250px; height: 100vh; position: fixed;">
     <a class="navbar-brand js-scroll-trigger text-center mt-3" href="#page-top">
       <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="pp.jpg" alt="Mohamed's Profile" />
@@ -91,6 +170,7 @@
     </div>
   </nav>
 
+  <!-- Resume content START -->
   <div class="container-fluid">
     <section class="resume-section fade-in" id="about">
       <div class="resume-section-content">
@@ -110,7 +190,7 @@
 
     <section class="resume-section fade-in" id="experience">
       <div class="resume-section-content">
-        <h2 class="mb-4">Experience</h2>
+        <h2>Experience</h2>
         <ul>
           <li><strong>Senior Cloud Architect, Vodafone</strong>: Architected secure, automated multi-cloud landing zones (AWS/Azure/VMware). Led hybrid cloud transformation and cost governance for high-impact business units.</li>
           <li><strong>Cloud Consultant, Deloitte</strong>: Delivered cloud strategies and automated frameworks for financial and public sector clients in EMEA. Focused on compliance (ISO/GDPR), landing zone design, and FinOps advisory.</li>
@@ -123,7 +203,7 @@
 
     <section class="resume-section fade-in" id="education">
       <div class="resume-section-content">
-        <h2 class="mb-4">Education</h2>
+        <h2>Education</h2>
         <ul>
           <li><strong>M.Sc. in Networks Engineering</strong> – German University in Cairo, A+ — Published 6 peer-reviewed conference papers + 1 journal with 7000+ reads.</li>
           <li><strong>B.Sc. in Networks Engineering</strong> – German University in Cairo, B+, Graduation Project (A+) focused on advanced information security and cryptography.</li>
@@ -133,21 +213,27 @@
 
     <section class="resume-section fade-in" id="skills">
       <div class="resume-section-content">
-        <h2 class="mb-4">Skills</h2>
+        <h2>Skills</h2>
         <ul>
           <li><strong>Cloud Platforms:</strong> AWS, Azure, GCP, VMware vSphere & NSX-T</li>
           <li><strong>Infrastructure as Code:</strong> Terraform, CloudFormation, Pulumi, Ansible, Chef</li>
           <li><strong>CI/CD & DevOps:</strong> GitLab CI/CD, GitHub Actions, Jenkins, ArgoCD, Helm, Docker, Kubernetes</li>
           <li><strong>Programming:</strong> Python, Bash, PowerShell, Java</li>
-          <li><strong>Monitoring & Cost:</strong> Datadog, Prometheus, AWS Cost Explorer, Trusted Advisor</li>
+          <li><strong>Cloud Security:</strong> AWS Security, Azure Security, GCP Security, VMware NSX-T Security</li>
+          <li><strong>Cloud Governance:</strong> AWS Organizations, Azure Management Groups, GCP Resource Hierarchy</li>
+          <li><strong>Cloud Cost Management:</strong> AWS Cost Explorer, Azure Cost Management, GCP Cost Management, VMware vRealize</li>
+          <li><strong>Cloud Operations:</strong> AWS CloudWatch, Azure Monitor, GCP Cloud Monitoring, VMware vRealize Operations</li>
+          <li><strong>Cloud Automation:</strong> AWS Lambda, Azure Functions, GCP Cloud Functions, VMware vRealize Orchestrator</li>
+          <li><strong>Cloud Monitoring:</strong> AWS CloudWatch, Azure Monitor, GCP Cloud Monitoring, VMware vRealize Operations</li>
           <li><strong>Certifications:</strong> AWS SAA & SysOps, AZ-104, VCP, ISM v4, CCNA R&S</li>
+          <li><strong>Cloud Tools:</strong> AWS CLI, Azure CLI, GCP CLI, VMware vRealize</li>
         </ul>
       </div>
     </section>
 
     <section class="resume-section fade-in" id="projects">
       <div class="resume-section-content">
-        <h2 class="mb-4">Projects</h2>
+        <h2>Projects</h2>
         <ul>
           <li><strong>Multi-Cloud Compliance Platform:</strong> Designed a platform to validate compliance (CIS, GDPR) across AWS, Azure, and GCP using Python, Terraform, Sentinel, and GitLab CI/CD.</li>
           <li><strong>Routii App Infrastructure:</strong> Dockerized app deployed on AWS with Bitbucket CI/CD pipelines, TestRail QA, and Jira tracking.</li>
@@ -158,6 +244,7 @@
       </div>
     </section>
   </div>
+  <!-- Resume content END -->
 
   <footer class="text-center p-3">
     <p class="text-muted">&copy; Mohamed ElBeltagy 2025</p>
