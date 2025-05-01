@@ -13,45 +13,156 @@
   <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" />
   <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
-  <!-- Bootstrap and Theme -->
+  <!-- Bootstrap and Custom CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #e8f5e9;
+      font-family: 'Muli', sans-serif;
+      padding-left: 260px;
+    }
+    .bg-primary {
+      background-color: #1b1f23 !important;
+    }
+    .text-primary {
+      color: #69f0ae !important;
+    }
+    a, a:hover {
+      color: #00e676;
+    }
+    .resume-section {
+      padding: 4rem 2rem;
+    }
+    .resume-section-content h2 {
+      color: #00e676;
+    }
+    .resume-section-content ul li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      color: #81c784;
+      transition: transform 0.3s ease-in-out;
+    }
+    .social-icons a:hover {
+      color: #b9f6ca;
+      transform: scale(1.2);
+    }
+    .navbar-nav .nav-link {
+      color: #c8e6c9 !important;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #00e676 !important;
+    }
+    .img-profile {
+      max-width: 200px;
+      border: 4px solid #4caf50;
+    }
+    .fade-in {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body id="page-top">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Mohamed ElBeltagy</span>
-      <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="pp.jpg" alt="Mohamed ElBeltagy Profile" />
-      </span>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top flex-column" id="sideNav" style="width: 250px; height: 100vh; position: fixed;">
+    <a class="navbar-brand js-scroll-trigger text-center mt-3" href="#page-top">
+      <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="pp.jpg" alt="Mohamed's Profile" />
+      <div class="text-light mt-2">Mohamed ElBeltagy</div>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+    <div class="collapse navbar-collapse show" id="navbarResponsive">
+      <ul class="navbar-nav flex-column text-center w-100">
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Page Content Placeholder -->
-  <div class="container-fluid p-0">
-    <!-- Sections will be filled and enhanced in the next steps -->
+  <div class="container-fluid">
+    <section class="resume-section fade-in" id="about">
+      <div class="resume-section-content">
+        <h1 class="mb-0">Mohamed <span class="text-primary">ElBeltagy</span></h1>
+        <div class="subheading mb-3">
+          Cairo, Egypt · <a href="tel:+201221411827">+201221411827</a> · <a href="mailto:mohamedbeltagyy@gmail.com">mohamedbeltagyy@gmail.com</a>
+        </div>
+        <p class="lead">Senior Cloud Architect & DevOps Engineer with a proven track record of delivering scalable, secure, and resilient infrastructure across AWS, Azure, and GCP. Specialized in cloud governance, cost optimization, infrastructure as code, and DevSecOps automation. Ex-AWS Dublin engineer with global project exposure in telco, finance, and government sectors.</p>
+        <div class="social-icons mt-4">
+          <a href="Beltagy_Resume_2024.pdf" download><i class="fas fa-file-alt"></i></a>
+          <a href="https://linkedin.com/in/beltagyy"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/beltagyy"><i class="fab fa-github"></i></a>
+          <a href="https://www.researchgate.net/profile/Mohamed-Elbeltagy-4"><i class="fab fa-researchgate"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section fade-in" id="experience">
+      <div class="resume-section-content">
+        <h2 class="mb-4">Experience</h2>
+        <ul>
+          <li><strong>Senior Cloud Architect, Vodafone</strong>: Architected secure, automated multi-cloud landing zones (AWS/Azure/VMware). Led hybrid cloud transformation and cost governance for high-impact business units.</li>
+          <li><strong>Cloud Consultant, Deloitte</strong>: Delivered cloud strategies and automated frameworks for financial and public sector clients in EMEA. Focused on compliance (ISO/GDPR), landing zone design, and FinOps advisory.</li>
+          <li><strong>Software Engineer 2, Archer IRM</strong>: Built GitLab-based CI/CD pipelines, Terraform-based IaC, and Chef-managed fleet. Reduced AWS OPEX by $1.3M. Launched global SaaS regions in UAE and Canada.</li>
+          <li><strong>Cloud Engineer, AWS Dublin</strong>: Provided consultations and support for media and storage services (S3, SES, CloudFront). Acted as Quality Champion. Delivered internal tooling and mentored junior engineers.</li>
+          <li><strong>Support Engineer, Dell Technologies</strong>: Resolved critical infrastructure issues involving Cisco UCS, Nexus 9K/3K, VMware, and Dell storage. Handled escalation and root cause analysis for enterprise clients.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="resume-section fade-in" id="education">
+      <div class="resume-section-content">
+        <h2 class="mb-4">Education</h2>
+        <ul>
+          <li><strong>M.Sc. in Networks Engineering</strong> – German University in Cairo, A+ — Published 6 peer-reviewed conference papers + 1 journal with 7000+ reads.</li>
+          <li><strong>B.Sc. in Networks Engineering</strong> – German University in Cairo, B+, Graduation Project (A+) focused on advanced information security and cryptography.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="resume-section fade-in" id="skills">
+      <div class="resume-section-content">
+        <h2 class="mb-4">Skills</h2>
+        <ul>
+          <li><strong>Cloud Platforms:</strong> AWS, Azure, GCP, VMware vSphere & NSX-T</li>
+          <li><strong>Infrastructure as Code:</strong> Terraform, CloudFormation, Pulumi, Ansible, Chef</li>
+          <li><strong>CI/CD & DevOps:</strong> GitLab CI/CD, GitHub Actions, Jenkins, ArgoCD, Helm, Docker, Kubernetes</li>
+          <li><strong>Programming:</strong> Python, Bash, PowerShell, Java</li>
+          <li><strong>Monitoring & Cost:</strong> Datadog, Prometheus, AWS Cost Explorer, Trusted Advisor</li>
+          <li><strong>Certifications:</strong> AWS SAA & SysOps, AZ-104, VCP, ISM v4, CCNA R&S</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="resume-section fade-in" id="projects">
+      <div class="resume-section-content">
+        <h2 class="mb-4">Projects</h2>
+        <ul>
+          <li><strong>Multi-Cloud Compliance Platform:</strong> Designed a platform to validate compliance (CIS, GDPR) across AWS, Azure, and GCP using Python, Terraform, Sentinel, and GitLab CI/CD.</li>
+          <li><strong>Routii App Infrastructure:</strong> Dockerized app deployed on AWS with Bitbucket CI/CD pipelines, TestRail QA, and Jira tracking.</li>
+          <li><strong>ML Forecasting API:</strong> Flask API served from Azure App Services + NGINX for predictive analytics using pre-trained models.</li>
+          <li><strong>S3 Lifecycle Monitor:</strong> Automated Lambda-based tracking system for file activity and Slack notifications across multiple S3 buckets.</li>
+          <li><a href="index2.html" class="btn btn-success mt-2">🔗 See Detailed Projects</a></li>
+        </ul>
+      </div>
+    </section>
   </div>
 
   <footer class="text-center p-3">
     <p class="text-muted">&copy; Mohamed ElBeltagy 2025</p>
   </footer>
 
-  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/scripts.js"></script>
 </body>
 </html>
