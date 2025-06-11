@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beltagy-portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: beltagy-portfolio
+  template:
+    metadata:
+      labels:
+        app: beltagy-portfolio
+    spec:
+      containers:
+        - name: beltagy-portfolio 
+          image: beltagyy/beltagy_portfolio:latest
+      imagePullSecrets:
+        - name: regcred

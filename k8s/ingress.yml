@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: cluster-issuer-letsencrypt-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: portfolio-ingress
+spec:
+  ingressClassName: external-nginx
+  rules:
+  - host: beltagy.axolotlite.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: beltagy-portfolio
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - beltagy.axolotlite.com
+    secretName: nginx-tls-beltagy
